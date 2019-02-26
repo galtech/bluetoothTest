@@ -26,6 +26,6 @@ function connect(){
     });
 }
 
-// function listen() {
-//     annyang.start({ continuous: true });
-// }
+function listen() {
+    annyang.start({ continuous: true });
+}
