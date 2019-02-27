@@ -1,7 +1,7 @@
 function connect(){
   // Step 1: Scan for a device with 0xffe5 service
   navigator.bluetooth.requestDevice({
-    filters: [{ services: [0x1819] }]
+    filters: [{ services: [0x1800],[0x1801],[0x180A] }]
   })
     .then(function(device) {
       // Step 2: Connect to it
@@ -9,11 +9,11 @@ function connect(){
     })
     .then(function(server) {
       // Step 3: Get the Service
-      return server.getPrimaryService(0x1819);
+      return server.getPrimaryService(0x1800);
     })
     .then(function(service) {
       // Step 4: get the Characteristic
-      return service.getCharacteristic(0x1819);
+      return service.getCharacteristic(0x2A00);
     })
     // .then(function(characteristic) {
     //   // Step 5: Write to the characteristic
