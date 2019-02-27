@@ -1,7 +1,7 @@
 function connect(){
   // Step 1: Scan for a device with 0xffe5 service
   navigator.bluetooth.requestDevice({
-    filters: [{ services: [0x1800],[0x1801],[0x180A] }]
+    filters: [{ services: [0x1800] }]
   })
     .then(function(device) {
       // Step 2: Connect to it
